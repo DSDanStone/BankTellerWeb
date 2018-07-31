@@ -1,0 +1,27 @@
+﻿@model LoginCredentials
+@{
+    ViewData["Title"] = "Login";
+    bool loginFailed = TempData["Failed_Login"] != null;
+}
+
+<h2>Login</h2>
+
+@if(loginFailed)
+{
+    <p class="head-note">The login was not vaild</p>
+}
+
+<form asp-controller="account" asp-action="verifylogin" asp-route-loginFailed="true" method="post">
+    <div>
+        <label asp-for="UserName">Username: </label>
+        <input asp-for="UserName" />
+    </div>
+    <div>
+        <label asp-for="Password">Password: </label>
+        <input type="password" asp-for="Password" />
+    </div>
+    
+    <input type="submit" value="Log In" />
+</form>
+
+<a asp-controller="account" asp-action="newuser">Or make a new profile</a>

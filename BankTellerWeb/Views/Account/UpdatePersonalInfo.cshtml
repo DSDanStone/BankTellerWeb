@@ -1,0 +1,46 @@
+﻿@model BankCustomer
+@{
+    ViewData["Title"] = "UpdatePersonalInfo";
+}
+
+<h2>Update Personal Info</h2>
+
+<form asp-controller="account" asp-action="updatePersonalInfo" method="post" class="user-info-form">
+    <div>
+        <label asp-for="FirstName">First Name:</label>
+        <input asp-for="FirstName" value=@Model.FirstName />
+        <span asp-validation-for="FirstName" class="validation-error"></span>
+    </div>
+    <div>
+        <label asp-for="LastName">Last Name:</label>
+        <input asp-for="LastName" value=@Model.LastName />
+        <span asp-validation-for="LastName" class="validation-error"></span>
+    </div>
+    <div>
+        <label asp-for="Address.Address1">Address:</label>
+        <input asp-for="Address.Address1" value=@Model.Address.Address1 />
+        <span asp-validation-for="Address.Address1" class="validation-error"></span>
+    </div>
+    <div>
+        <label asp-for="Address.Address2">Address:</label>
+        <input asp-for="Address.Address2" value=@Model.Address.Address2 />
+    </div>
+    <div>
+        <label asp-for="Address.City">City:</label>
+        <input asp-for="Address.City" value=@Model.Address.City />
+        <span asp-validation-for="Address.City" class="validation-error"></span>
+    </div>
+    <div>
+        <label asp-for="Address.State">City:</label>
+        <input asp-for="Address.State" value=@Model.Address.State />
+        <span asp-validation-for="Address.State" class="validation-error"></span>
+    </div>
+    <div>
+        <label asp-for="Address.Zip">Zip Code:</label>
+        <input asp-for="Address.Zip" value=@Model.Address.Zip />
+        <span asp-validation-for="Address.Zip" class="validation-error"></span>
+    </div>
+    <input type="submit" value="Save!" />
+</form>
+
+<a asp-controller="account" asp-action="index">Go Back</a>

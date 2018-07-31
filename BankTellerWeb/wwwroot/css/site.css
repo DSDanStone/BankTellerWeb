@@ -8,30 +8,47 @@ body {
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
+    margin-left: 150px;
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+.sidenav {
+    height: 100%;
+    width: 25%;
+    max-width: 150px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: limegreen;
+    overflow-x: hidden;
+    padding-top: 10px;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
-}
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
-}
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
+    .sidenav a {
+        padding: 8px 8px 8px 25px;
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        display: block;
     }
+
+        .sidenav a:hover {
+            background-color: rgb(76, 175, 80);
+        }
+
+        .sidenav a img {
+            
+            width: 100px;
+            height: auto;
+        }
+
+.user-info-form label {
+    width: 80px;
+}
+.user-info-form input[type="text"] {
+    width: 232px;
 }

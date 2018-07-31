@@ -12,7 +12,7 @@ namespace BankTellerWeb.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+			return RedirectToAction("Index", "Account");
         }
 
         public IActionResult About()

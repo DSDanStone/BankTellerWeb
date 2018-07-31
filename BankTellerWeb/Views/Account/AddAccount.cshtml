@@ -1,0 +1,19 @@
+﻿@model AccountCreatorModel
+@{
+    ViewData["Title"] = "AddAccount";
+}
+
+<h2>Create a New Account</h2>
+
+<form asp-controller="account" asp-action="AddAccount" method="post" id="new-account-form">
+    <div>
+        <label asp-for="Name">Give Your Account a Name:</label>
+        <input asp-for="Name" value="@Model.Name" />
+    </div>
+    <div>
+        <label asp-for="Type">What type of account would you like to create:</label>
+        <select asp-for="Type" asp-items="AccountCreatorModel.AccountTypes"></select>
+        <span asp-validation-for="Type" class="validation-error"></span>
+    </div>
+    <input type="submit" value="Create Account!" />
+</form>

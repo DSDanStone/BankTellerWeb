@@ -1,0 +1,48 @@
+﻿@model BankCustomer
+@{
+    ViewData["Title"] = "LoggedInHome";
+}
+
+<h2>Welcome, @Model.FirstName</h2>
+
+<p>Which account would you like to view?</p>
+
+@if (Model.Accounts.Count != 0)
+{
+    <table>
+        @foreach(BankAccount account in Model.Accounts)
+        {
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                <div>
+                    @account.AccountName @(account.GetType()==typeof(SavingsAccount)?"Savings":"Checking")
+                </div>
+                <div>
+                    Current Balance: @account.Balance.ToString("C")
+                </div>
+            </td>
+        </tr>
+        }
+    </table>
+}
+else
+{
+    <p>It seems you do not currently have a bank account. Would you like to <a asp-controller="Account" asp-action="AddAccount">open a New Account?</a></p>
+}
+
+
+<p>Or you could: </p>
+<div>
+    <a asp-controller="Account" asp-action="AddAccount">Open a New Account</a>
+</div>
+<div>
+    <a asp-controller="Account" asp-action="UpdatePersonalInfo">Update My User Info</a>
+</div>
+<div>
+    <a asp-controller="Account" asp-action="UpdateLogin">Change My Password</a>
+</div>
+
+
